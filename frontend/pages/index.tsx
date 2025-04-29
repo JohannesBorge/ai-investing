@@ -125,22 +125,22 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">AI Stock Investment Tool</h1>
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-5xl font-bold text-center mb-12 text-gray-900">AI Stock Investment Tool</h1>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* News Analysis Section */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4 flex items-center text-gray-700">
-              <NewspaperIcon className="h-6 w-6 mr-2 text-blue-500" />
+          <div className="bg-gray-50 rounded-2xl shadow-sm p-8">
+            <h2 className="text-3xl font-semibold mb-6 flex items-center text-gray-900">
+              <NewspaperIcon className="h-8 w-8 mr-3 text-blue-600" />
               News Analysis
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">News Article</label>
                 <textarea
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
                   placeholder="Paste news article here..."
                   value={newsText}
                   onChange={(e) => setNewsText(e.target.value)}
@@ -151,23 +151,23 @@ export default function Home() {
                 <label className="block text-sm font-medium text-gray-700 mb-2">Or News URL</label>
                 <input
                   type="text"
-                  className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
                   placeholder="Enter news URL..."
                   value={newsUrl}
                   onChange={(e) => setNewsUrl(e.target.value)}
                 />
               </div>
               <button
-                className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50"
+                className="w-full bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors disabled:opacity-50 font-medium"
                 onClick={analyzeNews}
                 disabled={isLoading || (!newsText && !newsUrl)}
               >
                 {isLoading ? 'Analyzing...' : 'Analyze News'}
               </button>
               {newsAnalysis && (
-                <div className="mt-4 p-4 bg-gray-50 rounded-lg border">
-                  <h3 className="text-lg font-semibold mb-2 text-gray-700">Analysis Results</h3>
-                  <div className="space-y-2">
+                <div className="mt-6 p-6 bg-white rounded-xl border border-gray-200">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Analysis Results</h3>
+                  <div className="space-y-3">
                     <p>
                       <span className="font-medium text-gray-700">Sentiment:</span>{' '}
                       <span className={`font-semibold ${
@@ -193,18 +193,18 @@ export default function Home() {
           </div>
 
           {/* Portfolio Section */}
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl font-semibold mb-4 flex items-center text-gray-700">
-              <ChartBarIcon className="h-6 w-6 mr-2 text-green-500" />
+          <div className="bg-gray-50 rounded-2xl shadow-sm p-8">
+            <h2 className="text-3xl font-semibold mb-6 flex items-center text-gray-900">
+              <ChartBarIcon className="h-8 w-8 mr-3 text-green-600" />
               Portfolio Optimization
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <div className="flex space-x-4">
                 <div className="flex-1">
                   <label className="block text-sm font-medium text-gray-700 mb-2">Ticker Symbol</label>
                   <input
                     type="text"
-                    className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white"
                     placeholder="e.g., AAPL"
                     value={newTicker}
                     onChange={(e) => setNewTicker(e.target.value)}
@@ -214,17 +214,17 @@ export default function Home() {
                   <label className="block text-sm font-medium text-gray-700 mb-2">Weight (%)</label>
                   <input
                     type="number"
-                    className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="w-full p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white"
                     placeholder="e.g., 20"
                     value={newWeight}
                     onChange={(e) => setNewWeight(e.target.value)}
                   />
                 </div>
                 <button
-                  className="mt-6 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors"
+                  className="mt-6 bg-green-600 text-white px-4 py-4 rounded-xl hover:bg-green-700 transition-colors"
                   onClick={addToPortfolio}
                 >
-                  <PlusIcon className="h-5 w-5" />
+                  <PlusIcon className="h-6 w-6" />
                 </button>
               </div>
 
@@ -244,12 +244,12 @@ export default function Home() {
               </div>
 
               {portfolio.length > 0 && (
-                <div className="mt-4">
-                  <h3 className="text-lg font-semibold mb-2 text-gray-700">Current Portfolio</h3>
-                  <div className="space-y-2">
+                <div className="mt-6">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Current Portfolio</h3>
+                  <div className="space-y-3">
                     {portfolio.map((item, index) => (
-                      <div key={index} className="flex items-center justify-between p-2 bg-gray-50 rounded">
-                        <span className="font-medium">{item.ticker}</span>
+                      <div key={index} className="flex items-center justify-between p-4 bg-white rounded-xl border border-gray-200">
+                        <span className="font-medium text-gray-900">{item.ticker}</span>
                         <div className="flex items-center space-x-4">
                           <span className="text-gray-600">{item.weight}%</span>
                           <button
@@ -262,14 +262,14 @@ export default function Home() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 h-64">
+                  <div className="mt-6 h-64">
                     <Pie data={portfolioData} />
                   </div>
                 </div>
               )}
 
               <button
-                className="w-full bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors disabled:opacity-50"
+                className="w-full bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition-colors disabled:opacity-50 font-medium"
                 onClick={optimizePortfolio}
                 disabled={isLoading || portfolio.length === 0}
               >
@@ -277,9 +277,9 @@ export default function Home() {
               </button>
 
               {optimizedPortfolio && (
-                <div className="mt-4 p-4 bg-gray-50 rounded-lg border">
-                  <h3 className="text-lg font-semibold mb-2 text-gray-700">Optimized Portfolio</h3>
-                  <div className="space-y-2">
+                <div className="mt-6 p-6 bg-white rounded-xl border border-gray-200">
+                  <h3 className="text-xl font-semibold mb-4 text-gray-900">Optimized Portfolio</h3>
+                  <div className="space-y-3">
                     <p>
                       <span className="font-medium text-gray-700">Expected Return:</span>{' '}
                       <span className="text-green-600">{(optimizedPortfolio.expected_return * 100).toFixed(2)}%</span>
@@ -288,10 +288,10 @@ export default function Home() {
                       <span className="font-medium text-gray-700">Expected Risk:</span>{' '}
                       <span className="text-red-600">{(optimizedPortfolio.expected_risk * 100).toFixed(2)}%</span>
                     </p>
-                    <div className="mt-2">
+                    <div className="mt-4">
                       {Object.entries(optimizedPortfolio.optimized_weights).map(([ticker, weight]) => (
-                        <p key={ticker} className="flex justify-between">
-                          <span className="font-medium">{ticker}</span>
+                        <p key={ticker} className="flex justify-between py-2 border-b border-gray-100 last:border-0">
+                          <span className="font-medium text-gray-900">{ticker}</span>
                           <span className="text-gray-600">{(Number(weight) * 100).toFixed(2)}%</span>
                         </p>
                       ))}
@@ -304,30 +304,30 @@ export default function Home() {
         </div>
 
         {/* Chat Section */}
-        <div className="mt-8 bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-semibold mb-4 flex items-center text-gray-700">
-            <ChatBubbleLeftIcon className="h-6 w-6 mr-2 text-purple-500" />
+        <div className="mt-12 bg-gray-50 rounded-2xl shadow-sm p-8">
+          <h2 className="text-3xl font-semibold mb-6 flex items-center text-gray-900">
+            <ChatBubbleLeftIcon className="h-8 w-8 mr-3 text-purple-600" />
             AI Chatbot
           </h2>
-          <div className="space-y-4">
-            <div className="h-64 overflow-y-auto border rounded-lg p-4 bg-gray-50">
+          <div className="space-y-6">
+            <div className="h-64 overflow-y-auto border border-gray-200 rounded-xl p-6 bg-white">
               {chatHistory.map((chat, index) => (
                 <div key={index} className="mb-4">
-                  <p className="font-semibold text-gray-700">Q: {chat.question}</p>
-                  <p className="mt-1 text-gray-600">A: {chat.answer}</p>
+                  <p className="font-semibold text-gray-900">Q: {chat.question}</p>
+                  <p className="mt-2 text-gray-600">A: {chat.answer}</p>
                 </div>
               ))}
             </div>
             <div className="flex space-x-4">
               <input
                 type="text"
-                className="flex-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
+                className="flex-1 p-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 bg-white"
                 placeholder="Ask about your portfolio or news..."
                 value={chatQuestion}
                 onChange={(e) => setChatQuestion(e.target.value)}
               />
               <button
-                className="bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors disabled:opacity-50"
+                className="bg-purple-600 text-white px-8 py-4 rounded-xl hover:bg-purple-700 transition-colors disabled:opacity-50 font-medium"
                 onClick={askChat}
                 disabled={isLoading || !chatQuestion}
               >
