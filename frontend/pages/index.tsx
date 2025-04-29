@@ -27,7 +27,7 @@ interface ChatResponse {
   answer: string;
 }
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+const API_BASE_URL = 'https://ai-investing-b4b1.onrender.com';
 
 export default function Home() {
   const [newsText, setNewsText] = useState('');
