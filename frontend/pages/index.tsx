@@ -23,6 +23,8 @@ interface OptimizedPortfolio {
   expected_risk: number;
 }
 
+const API_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000';
+
 export default function Home() {
   const [newsText, setNewsText] = useState('');
   const [newsUrl, setNewsUrl] = useState('');
@@ -40,7 +42,7 @@ export default function Home() {
     if (!newsText && !newsUrl) return;
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:8000/analyze-news', {
+      const response = await axios.post(`${API_BASE_URL}/analyze-news`, {
         text: newsText,
         url: newsUrl || undefined,
       });
@@ -68,7 +70,7 @@ export default function Home() {
     if (portfolio.length === 0) return;
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:8000/optimize-portfolio', {
+      const response = await axios.post(`${API_BASE_URL}/optimize-portfolio`, {
         tickers: portfolio.map(p => p.ticker),
         weights: portfolio.map(p => p.weight),
         risk_tolerance: riskTolerance,
@@ -85,7 +87,7 @@ export default function Home() {
     if (!chatQuestion) return;
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:8000/chat', {
+      const response = await axios.post(`${API_BASE_URL}/chat`, {
         question: chatQuestion,
         portfolio: portfolio.reduce((acc, p) => ({ ...acc, [p.ticker]: p.weight }), {}),
         news_sentiment: newsAnalysis ? { sentiment: newsAnalysis.sentiment } : undefined,
