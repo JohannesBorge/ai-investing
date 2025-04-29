@@ -37,23 +37,23 @@ const slideIn = {
 
 const features = [
   {
-    name: 'News Analysis',
-    description: 'Get AI-powered analysis of market news and its impact on your portfolio.',
+    name: 'AI-Powered Analysis',
+    description: 'Get instant insights from our advanced AI system that analyzes market news and trends.',
     icon: NewspaperIcon,
   },
   {
-    name: 'Portfolio Tracking',
-    description: 'Track your investments and get real-time insights about your portfolio.',
+    name: 'Smart Portfolio',
+    description: 'Track and optimize your investments with real-time data and intelligent recommendations.',
     icon: ChartBarIcon,
   },
   {
-    name: 'AI Chat Assistant',
-    description: 'Get instant answers to your investment questions from our AI assistant.',
+    name: 'Expert Guidance',
+    description: 'Get personalized advice from our AI assistant to make better investment decisions.',
     icon: ChatBubbleLeftIcon,
   },
   {
-    name: 'Market Insights',
-    description: 'Stay ahead with advanced market analysis and trend predictions.',
+    name: 'Market Intelligence',
+    description: 'Stay ahead with comprehensive market analysis and predictive insights.',
     icon: ArrowTrendingUpIcon,
   },
 ];
@@ -118,121 +118,114 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-              <div className="sm:text-center lg:text-left">
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl"
-                >
-                  <span className="block">Intelligent</span>
-                  <span className="block text-blue-600">Stock Analysis</span>
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
-                >
-                  Leverage AI to analyze market news, track your portfolio, and get real-time insights to make better investment decisions.
-                </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
-                >
-                  <div className="rounded-md shadow">
-                    <a
-                      href="/dashboard"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
-                    >
-                      Get Started
-                    </a>
-                  </div>
-                  <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <a
-                      href="/news"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10"
-                    >
-                      View News
-                    </a>
-                  </div>
-                </motion.div>
-              </div>
-            </main>
+      <section className="hero-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="hero-title"
+            >
+              You Don't Need More Data.
+              <br />
+              You Need Better Insights.
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="hero-subtitle"
+            >
+              For investors looking to make smarter decisions. I combine AI-powered analysis and expert insights to help you navigate the market with confidence.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+            >
+              <a href="/dashboard" className="btn-primary">
+                Get Started
+              </a>
+              <a href="/contact" className="btn-secondary">
+                Contact Me
+              </a>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Features Section */}
-      <div className="py-12 bg-white">
+      <section className="features-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-blue-600 font-semibold tracking-wide uppercase">Features</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Everything you need to invest smarter
-            </p>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
               Our platform combines cutting-edge AI technology with comprehensive market analysis to help you make better investment decisions.
             </p>
           </div>
 
-          <div className="mt-10">
-            <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative"
-                >
-                  <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                    <feature.icon className="h-6 w-6" aria-hidden="true" />
-                  </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">{feature.name}</p>
-                  <p className="mt-2 ml-16 text-base text-gray-500">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="mt-20 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="feature-card"
+              >
+                <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-black text-white">
+                  <feature.icon className="h-6 w-6" aria-hidden="true" />
+                </div>
+                <h3 className="mt-6 text-xl font-semibold text-gray-900">{feature.name}</h3>
+                <p className="mt-2 text-gray-600">{feature.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-black text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Ready to start investing smarter?
+          </h2>
+          <p className="mt-4 text-lg text-gray-300">
+            Join thousands of investors who are already using our platform to make better decisions.
+          </p>
+          <div className="mt-8">
+            <a href="/dashboard" className="btn-primary bg-white text-black hover:bg-gray-100">
+              Get Started Now
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="bg-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
-          <nav className="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-            <div className="px-5 py-2">
-              <a href="/about" className="text-base text-gray-500 hover:text-gray-900">
-                About
-              </a>
-            </div>
-            <div className="px-5 py-2">
-              <a href="/contact" className="text-base text-gray-500 hover:text-gray-900">
-                Contact
-              </a>
-            </div>
-            <div className="px-5 py-2">
-              <a href="/privacy" className="text-base text-gray-500 hover:text-gray-900">
-                Privacy
-              </a>
-            </div>
-            <div className="px-5 py-2">
-              <a href="/terms" className="text-base text-gray-500 hover:text-gray-900">
-                Terms
-              </a>
-            </div>
+      <footer className="footer">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="flex flex-wrap justify-center gap-8" aria-label="Footer">
+            <a href="/about" className="footer-link">
+              About
+            </a>
+            <a href="/contact" className="footer-link">
+              Contact
+            </a>
+            <a href="/privacy" className="footer-link">
+              Privacy
+            </a>
+            <a href="/terms" className="footer-link">
+              Terms
+            </a>
           </nav>
-          <p className="mt-8 text-center text-base text-gray-400">
+          <p className="mt-8 text-center text-gray-500">
             &copy; 2024 AI Stock News. All rights reserved.
           </p>
         </div>
