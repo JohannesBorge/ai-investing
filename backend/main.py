@@ -20,13 +20,10 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = FastAPI(title="AI Stock Investment Tool")
 
-# Get frontend URL from environment variable
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
-
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL],
+    allow_origins=["https://ai-investing-one.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
